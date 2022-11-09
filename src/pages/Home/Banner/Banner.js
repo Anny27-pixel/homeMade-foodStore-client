@@ -19,7 +19,7 @@ const Banner = () => {
                     <img src={img1} alt="" className="w-full" />
                 </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-28 right-5 top-1/4">
-                    <h1 className='text-5xl font-bold text-white'>
+                    <h1 className='text-4xl mb-6 font-bold text-white'>
                         Home Made <br />
                         Healthy <br />
                         Food Collection</h1>
@@ -40,7 +40,7 @@ const Banner = () => {
                     <img src={img2} alt="" className="w-full" />
                 </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-28 right-5 top-1/4">
-                    <h1 className='text-5xl font-bold text-white'>
+                    <h1 className='text-4xl mb-6 font-bold text-white'>
                         Home Made <br />
                         Healthy <br />
                         Food Collection</h1>
@@ -61,7 +61,7 @@ const Banner = () => {
                     <img src={img3} alt="" className="w-full" />
                 </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-28 right-5 top-1/4">
-                    <h1 className='text-5xl font-bold text-white'>
+                    <h1 className='text-4xl mb-6 font-bold text-white'>
                         Home Made <br />
                         Healthy <br />
                         Food Collection</h1>
@@ -82,7 +82,7 @@ const Banner = () => {
                     <img src={img4} alt="" className="w-full" />
                 </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-28 right-5 top-1/4">
-                    <h1 className='text-5xl font-bold text-white'>
+                    <h1 className='text-4xl mb-6 font-bold text-white'>
                         Home Made <br />
                         Healthy <br />
                         Food Collection</h1>
@@ -103,7 +103,7 @@ const Banner = () => {
                     <img src={img5} alt="" className="w-full" />
                 </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-28 right-5 top-1/4">
-                    <h1 className='text-5xl font-bold text-white'>
+                    <h1 className='text-4xl mb-6 font-bold text-white'>
                         Home Made <br />
                         Healthy <br />
                         Food Collection</h1>
@@ -124,7 +124,7 @@ const Banner = () => {
                     <img src={img6} alt="" className="w-full" />
                 </div>
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-28 right-5 top-1/4">
-                    <h1 className='text-5xl font-bold text-white'>
+                    <h1 className='text-4xl mb-6 font-bold text-white'>
                         Home Made <br />
                         Healthy <br />
                         Food Collection</h1>
