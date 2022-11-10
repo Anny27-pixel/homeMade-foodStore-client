@@ -5,7 +5,7 @@ import { AuthContext } from '../../context/AuthProvider';
 
 const Login = () => {
 
-    const { login } = useContext(AuthContext);
+    const { login, googleSignIn } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -39,10 +39,36 @@ const Login = () => {
                     .then(data => {
                         console.log(data);
                         localStorage.setItem('token', data.token);
+                        navigate(from, { replace: true });
                     })
-                // navigate(from, { replace: true });
+
             })
             .catch(e => console.error(e));
+    }
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                const currentUser = {
+                    email: user.email
+                }
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('token', data.token);
+                        navigate(from, { replace: true });
+                    })
+            })
+            .catch(e => console.error(e))
+
     }
 
 
@@ -72,6 +98,7 @@ const Login = () => {
                     </div>
                 </form>
                 <p className='text-lg mx-auto mb-6 '>New to our Website? <Link className='text-lg font-semibold text-orange-500' to='/signup'>Sign Up</Link> </p>
+                <button onClick={handleGoogleSignIn} style={{ width: '200px' }} className='btn bg-orange-500 mx-auto my-6'>Login Via Google</button>
             </div>
 
         </div>
