@@ -24,7 +24,7 @@ const Review = ({ _id, serviceName }) => {
             rating,
             message
         }
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://homemade-foodstore-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

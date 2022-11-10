@@ -28,7 +28,7 @@ const Login = () => {
                 console.log(currentUser);
                 form.reset();
                 // get jwt token
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://homemade-foodstore-server.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -53,7 +53,7 @@ const Login = () => {
                 const currentUser = {
                     email: user.email
                 }
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://homemade-foodstore-server.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

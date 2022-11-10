@@ -8,7 +8,7 @@ const MyReviews = ({ serviceName, handleDelete }) => {
     const [myReviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?serviceName=${serviceName}`)
+        fetch(`https://homemade-foodstore-server.vercel.app/reviews?serviceName=${serviceName}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [serviceName]);

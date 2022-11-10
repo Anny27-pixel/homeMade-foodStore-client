@@ -10,7 +10,7 @@ const ServiceDetails = () => {
     const handleDelete = id => {
         const proceed = window.confirm('want to delete your review?');
         if (proceed) {
-            fetch(`http://localhost:5000/reviews?serviceName=${id}`, {
+            fetch(`https://homemade-foodstore-server.vercel.app/reviews?serviceName=${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

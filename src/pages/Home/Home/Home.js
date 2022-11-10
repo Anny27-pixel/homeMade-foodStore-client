@@ -10,7 +10,7 @@ const Home = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/serviceLimit')
+        fetch('https://homemade-foodstore-server.vercel.app/serviceLimit')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
