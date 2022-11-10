@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ReviewRow = ({ review, handleDelete }) => {
-    const { _id, Reviewer, image, rating, message, email } = review;
+    const { _id, Reviewer, image, rating, message, Service, email } = review;
+    const [reviewService, setReviewService] = useState({});
+    useEffect(() => {
+        fetch(`http://localhost:5000/services/${Service}`)
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                setReviewService(data);
 
-
+            })
+    }, [Service])
 
 
 
 
     return (
+
+
+
         <tr>
             <th>
                 <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs">Delete</button>
@@ -35,6 +46,7 @@ const ReviewRow = ({ review, handleDelete }) => {
                 <button className="btn btn-ghost btn-xs">Edit</button>
             </th>
         </tr>
+
 
     );
 };

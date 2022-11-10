@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div>
+        <div className='my-6'>
             <h2 className='text-4xl text-center my-6 text-orange-500 font-bold'>Why Choose Us</h2>
             <div className='bg-orange-300 text-center grid grid-cols-1 py-32 mx-12 rounded-xl '>
                 <div className="dropdown dropdown-end">

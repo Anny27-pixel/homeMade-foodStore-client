@@ -4,22 +4,32 @@ import logo from '../../../assets/logo.ico';
 import { AuthContext } from '../../../context/AuthProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(e => console.error(e))
+    }
+
     const menuItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
+        <li className='font-semibold'><Link to='/services'>Services</Link></li>
+        <li className='font-semibold'><Link to='/about'>About</Link></li>
+        <li className='font-semibold'><Link to='/contact'>Contact</Link></li>
 
         {
             user?.email ?
                 <>
-                    <li className='font-semibold'><Link to='/myReviews'>MyReviews</Link></li>
+                    <li className='font-semibold'><Link to='/myReviews'>Reviews</Link></li>
+                    <button onClick={handleLogOut} className='btn btn-ghost'>Sign Out</button>
+
                 </>
                 :
                 <li className='font-semibold'><Link to='/login'>Login</Link></li>
         }
 
-        <li className='font-semibold'><Link to='/services'>Services</Link></li>
-        <li className='font-semibold'><Link to='/contact'>About</Link></li>
-        <li className='font-semibold'><Link to='/contact'>Contact</Link></li>
+
 
     </>
 

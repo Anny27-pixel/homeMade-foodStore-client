@@ -3,13 +3,14 @@ import { useLoaderData } from 'react-router-dom';
 import MyReviews from './MyReviews/MyReviews';
 import Review from './Review';
 
+
 const ServiceDetails = () => {
     const { _id, img, name, description, price, rating } = useLoaderData();
     const [myReviews, setReviews] = useState([]);
-    const handleDelete = _id => {
+    const handleDelete = id => {
         const proceed = window.confirm('want to delete your review?');
         if (proceed) {
-            fetch(`http://localhost:5000/reviews?serviceName=${_id}`, {
+            fetch(`http://localhost:5000/reviews?serviceName=${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -17,7 +18,7 @@ const ServiceDetails = () => {
                     console.log(data);
                     if (data.deletedCount > 0) {
                         alert('deleted successfully');
-                        const remaining = myReviews.filter(rev => rev._id !== _id);
+                        const remaining = myReviews.filter(rev => rev._id !== id);
                         setReviews(remaining);
                     }
                 })
@@ -48,6 +49,7 @@ const ServiceDetails = () => {
                     serviceName={name}
                 ></Review>
             </div>
+
         </div>
     );
 };
