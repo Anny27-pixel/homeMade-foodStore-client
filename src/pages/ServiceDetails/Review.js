@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../context/AuthProvider';
 
-const Review = ({ _id, name }) => {
+const Review = ({ _id, serviceName }) => {
 
     const { user } = useContext(AuthContext);
 
@@ -17,7 +17,7 @@ const Review = ({ _id, name }) => {
 
         const review = {
             Service: _id,
-            ServiceName: name,
+            ServiceName: serviceName,
             Reviewer: name,
             email,
             image,
