@@ -4,7 +4,7 @@ import image from '../../../../assets/image.jpg';
 const Contact = () => {
     return (
         <div>
-            <h2 className='text-4xl text-center my-6 text-orange-500 font-bold'>About Us / Contact us</h2>
+            <h2 className='text-4xl text-center my-6 text-orange-500 font-bold'>Contact us</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mx-28 my-10 '>
                 <div>
                     <figure><img src={image} alt="Shoes" /></figure>
