@@ -1,22 +1,9 @@
 import React from 'react';
 
-const ReviewRow = ({ review }) => {
+const ReviewRow = ({ review, handleDelete }) => {
     const { _id, Reviewer, image, rating, message, email } = review;
 
 
-
-    const handleDelete = id => {
-        const proceed = window.confirm('want to delete your review?');
-        if (proceed) {
-            fetch(`http://localhost:5000/reviews?serviceName=${id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                })
-        }
-    }
 
 
 
@@ -39,6 +26,7 @@ const ReviewRow = ({ review }) => {
                     </div>
                 </div>
             </td>
+
             <td>
                 {message}
             </td>

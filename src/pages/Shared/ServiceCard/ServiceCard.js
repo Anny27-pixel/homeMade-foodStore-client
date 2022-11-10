@@ -9,7 +9,7 @@ const ServiceCard = ({ service }) => {
             <figure><img style={{ height: '300px', width: '300px' }} src={img} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
-                <p className='text-lg'>{description}</p>
+                <p className='text-lg'>{description.slice(0, 100)}</p>
                 <div className='flex mb-6 text-xl text-orange-500'>
                     <p>Price: ${price}</p>
                     <p>Ratings:{rating}</p>
