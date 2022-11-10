@@ -3,6 +3,7 @@ import Banner from '../Banner/Banner';
 import { useEffect, useState } from 'react';
 import ServiceCard from '../../Shared/ServiceCard/ServiceCard';
 import { Link } from 'react-router-dom';
+import Contact from './Contact/Contact';
 
 const Home = () => {
     const [services, setServices] = useState([]);
@@ -30,6 +31,7 @@ const Home = () => {
             <div className='text-center my-12'>
                 <Link to='/services'><button className="btn bg-orange-500 px-12">See All</button></Link>
             </div>
+            <Contact></Contact>
         </div>
     );
 };

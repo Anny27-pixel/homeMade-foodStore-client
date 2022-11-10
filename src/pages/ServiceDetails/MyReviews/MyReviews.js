@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
+
 import ReviewRow from '../ReviewRow';
 
-const MyReviews = ({ serviceName }) => {
+
+const MyReviews = ({ serviceName, handleDelete }) => {
     const [myReviews, setReviews] = useState([]);
 
     useEffect(() => {
@@ -12,23 +14,7 @@ const MyReviews = ({ serviceName }) => {
     }, [serviceName]);
 
 
-    const handleDelete = _id => {
-        const proceed = window.confirm('want to delete your review?');
-        if (proceed) {
-            fetch(`http://localhost:5000/reviews?serviceName=${_id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    if (data.deletedCount > 0) {
-                        alert('deleted successfully');
-                        const remaining = myReviews.filter(rev => rev._id !== _id);
-                        setReviews(remaining);
-                    }
-                })
-        }
-    }
+
 
 
     return (
@@ -58,6 +44,8 @@ const MyReviews = ({ serviceName }) => {
 
 
             </table>
+
+
         </div>
     );
 };

@@ -10,7 +10,7 @@ const Header = () => {
         {
             user?.email ?
                 <>
-                    <li className='font-semibold'><Link to='/reviews'>Reviews</Link></li>
+                    <li className='font-semibold'><Link to='/myReviews'>MyReviews</Link></li>
                 </>
                 :
                 <li className='font-semibold'><Link to='/login'>Login</Link></li>
